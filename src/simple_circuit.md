@@ -16,3 +16,51 @@ Values are read with the gold band on the right, as [color1 color2 * 10 to the c
 
 Image of resistor and schematic
 
+Power for this circuit is provided by 3.3V. Current flows from more positive voltage (3.3V) to less positive voltage (0V, also called ground or GND). For this circuit, we will use a Raspberry Pi Pico to generate 3.3V. The Pico recieves 5V from the USB cable and converts it to 3.3V for us to use. The Pico, plugged into the breadboard, has several pins that are GND, and one pin that is 3.3V, called 3V3OUT. The pins on the Pico are not labelled, so you'll need an image of the pinout for the Pico:
+
+Image of the pico pinout
+
+Most subcircuits in a design need access to power and ground, so the breadboard rails are usually connected to provide large numbers of connection points up and down the breadboard for ease of use. 
+
+## Get power into the rails
+
+Make a red wire to connect 3v3OUT to the red rail of the breadboard. Make a black wire to connect one of the GND pins to the blue rail of the breadboard. Make a pair or red and black wires to connect the opposite sides of the breadboard to each other.
+
+Image of powered rails
+
+## Build the circuit
+
+Image of circuit diagram
+
+Follow the circuit diagram to light up the LED. Start at 3.3V to the long side of the LED, the short side of the LED touched the resistor, and the other side of the resistor touched GND. There are an infinit number of ways to construct the circuit on the breadboard! Use read wires for 3.3V connections, black wires for GND connections, and other colors for intermediate steps. Here is one way to build the circuit:
+
+Image of simple circuit
+
+Here is a method that uses no wires:
+
+Image of circuit
+
+Here is a method that spans the breadboad:
+
+Image of circuit
+
+Everyone will have a different physical layout after building the circuit, but the circuit diagram is the same. This is why we work from circuit diagram, not by showing images of breadboards.
+
+## Edit the circuit
+
+A push button is a wire that is not continuous until the button plunger is pressed. Sometimes buttons come from the manufacturer in a cardboard strip with flat feet to keep them from falling out of the cardboard, so if your buttons have those feet, cut them off so they don't get stuck in the breadboard.
+
+Image of button, feet, schematic
+
+The button is drawn like a wire with a plunger. Insert it into your LED circuit according to this circuit diagram:
+
+Image of pushbutton circuit diagram
+
+When you press the button, the LED should light up! Good questions from here are:
+- does the order of the components matter for this circuit?
+- how could I redesign the circuit diagram so that the LED is always on and pressing the button turns it off?
+- how could I edit the circuit diagram to turn on several LEDs or change the brightness of the LEDs?
+
+# Safety
+
+Your intuition might be warning you that you are touching wires that have voltages on them and current through them, and that is not safe to do in most 
