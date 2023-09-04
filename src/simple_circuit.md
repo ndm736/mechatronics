@@ -63,4 +63,10 @@ When you press the button, the LED should light up! Good questions from here are
 
 # Safety
 
-Your intuition might be warning you that you are touching wires that have voltages on them and current through them, and that is not safe to do in most 
+Your intuition might be warning you that you are touching wires that have voltages on them and current through them, and that is not safe to do in most situations. Also, you can accidentally short the power supply while building the circuit, which is like shorting your USB port.
+
+Best practice is to unplug your power supply while building the circuit, and double check what you have built before plugging back in. This will help protect your computer, and prevent you from touching any live circuit. Following color coded wire conventions will help with visual inspections of the circuit.
+
+Your computer's USB port also has over current protection, so if you do short the USB, the computer will disable the port to protect itself. If you notice your port is not working, rebooting your computer will reenable it. The USB port does not have over voltage protection, so take a lot of care when using an external power supply (like a battery) in addition to a USB port.
+
+For your own personal safety considerations, it would take several mA through your chest to stop your heart. Your skin is usually > 100k Ohm, so you would need to touch a large voltage,like from the AC wall outlet, to shock yourself. 3.3V, 5V and 12V projects are generally safe to touch. If you are ever unsure, put one hand in your pocket while working, so that in the event of a shock, the current cannot travel from one hand to the other through your chest. Touching a live wire can cause your muscles to contract, so if you must touch a conductor (like an electric horse fence) touch with the back of your hand so that you do not clamp down on the wire.
