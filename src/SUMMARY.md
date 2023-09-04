@@ -8,6 +8,8 @@
 
 - [Electronics Prototyping](./electronics_prototyping.md)
 
+- [Build a simple circuit](./simple_circuit.md)
+
 - [Embedded Programming](./embedded_programming.md)
 
 - [Chapter 1 (template example)](./chapter_1.md)
