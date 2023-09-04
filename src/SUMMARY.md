@@ -12,4 +12,6 @@
 
 - [Embedded Programming](./embedded_programming.md)
 
+- [Programming the Pico in Circuit Python](./python_pico.md)
+
 - [Chapter 1 (template example)](./chapter_1.md)
