@@ -32,4 +32,5 @@ Northwestern offers several courses on using microcontrollers:
 - ME433: Advanced Mechatronics
 - ME224: Experimentaly Engineering / Python
 - DSGN297: Embedded Prototyping
+- DSGN495: Designing Product Interations (DPI)
 - EE###
