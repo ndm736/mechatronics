@@ -18,7 +18,8 @@ Image of resistor and schematic
 
 Power for this circuit is provided by 3.3V. Current flows from more positive voltage (3.3V) to less positive voltage (0V, also called ground or GND). For this circuit, we will use a Raspberry Pi Pico to generate 3.3V. The Pico recieves 5V from the USB cable and converts it to 3.3V for us to use. The Pico, plugged into the breadboard, has several pins that are GND, and one pin that is 3.3V, called 3V3OUT. The pins on the Pico are not labelled, so you'll need an image of the pinout for the Pico:
 
-Image of the pico pinout
+![Pico W Pinout](images/picow-pinout.svg)
+
 
 Most subcircuits in a design need access to power and ground, so the breadboard rails are usually connected to provide large numbers of connection points up and down the breadboard for ease of use. 
 
