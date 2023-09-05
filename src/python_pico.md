@@ -15,9 +15,9 @@ It can be annoying to use a general text editor and terminal emulator program, s
 After you open Mu, click the Mode button in the top right and switch to CircuitPython. Click the load button and open code.py in the CIRCUITPY drive. One downside to the design of the Circuit Python system si that the code that runs on the board must be named code.py. If there is no file called code.py then nothing will run, and putting another .py file in the drive will be ignored unless it is run as a function from code.py. Not a horrible problem, but annoying when you have a few different programs to try out and you must constantly rename them.
 
 Show some code:
-
+```
 {{#include print_hello.py}}
-
+```
 ## REPL
 
 Before editing code.py we can interact with Circuit Python using Read-Evaluate-Print-Loop, or REPL mode. Press the Serial button and click inside the CircuitPython REPL window at the bottom of the screen. Type any key and the board will enter REPL mode and present three carrots, ">>>". This is your clue to interact directly with Python. 
@@ -25,3 +25,4 @@ Before editing code.py we can interact with Circuit Python using Read-Evaluate-P
 In REPL mode you can create variables, do math or loops, and test code snippets. You wouldn't want to work in REPL, it is too slow, saving code in a file is much more convinient, but REPL is useful for debugging.
 
 To exit REPL and run code.py, type CTRL-D. If the code ends, the Serial window will prompt you to type any key to enter REPL or type CTRL-D to run the code again. Usually the code is in an infinite loop and will not end, so to cause the code to end and enter REPL at any time you can type CTRL-C. This is the best way to stop and restart the code.
+
