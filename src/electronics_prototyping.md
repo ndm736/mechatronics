@@ -27,7 +27,7 @@ Wire comes in a specific gauge, with smaller numbers representing thicker wires 
 
 Wire must touch to conduct. The tool most commonly used in electronics prototyping to connect wires is a breadboard, a collection of spring like wires in a plastic housing, with holes organized for the most convinient connections.
 
-![Breadboard clip](/images/clip.png)
+![Breadboard clip](/images/clips.png)
 
 ![Breadboard internals](/images/breadboard-internals.png)
 

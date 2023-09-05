@@ -14,5 +14,7 @@ It can be annoying to use a general text editor and terminal emulator program, s
 
 After you open Mu, click the Mode button in the top right and switch to CircuitPython. Click the load button and open code.py in the CIRCUITPY drive. One downside to the design of the Circuit Python system si that the code that runs on the board must be named code.py. If there is no file called code.py then nothing will run, and putting another .py file in the drive will be ignored unless it is run as a function from code.py. Not a horrible problem, but annoying when you have a few different programs to try out and you must constantly rename them.
 
+Show some code:
 
+print_hello.py
 
