@@ -16,5 +16,5 @@ After you open Mu, click the Mode button in the top right and switch to CircuitP
 
 Show some code:
 
-print_hello.py
+https://github.com/ndm736/mechatronics/blob/main/src/print_hello.py
 
