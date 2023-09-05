@@ -8,7 +8,7 @@ Circuits are build by connecting components with wire. While prototyping, wires 
 
 ## Wire
 
-There are two main types of wire, solid core and stranded, each covered with a jacket of insulation. Solid core wire has a single, thick strand of wire, while stranded wire has many strands of thinner wire twised together. Stranded wire is flexible: bend the wire and it should return to the original shape. Solid core wire will stay bent, like a bending a paper clip. Typically stranded wire is used for long, dangling wires or build a cord. But stranded wire is usually inconvieninet for general prototyping, the strands fray and can touch components that they should not, potentially cuasing shorts. Solid core wire works much better with the removable connections used when prototyping.
+There are two main types of wire, solid core and stranded, each covered with a jacket of insulation. Solid core wire has a single, thick strand of wire, while stranded wire has many strands of thinner wire twised together. Stranded wire is flexible: bend the wire and it should return to the original shape. Solid core wire will stay bent, like a bending a paper clip. Typically stranded wire is used for long, dangling wires or build a cord. But stranded wire is usually inconvieninet for general prototyping, the strands fray and can touch components that they should not, potentially causing shorts. Solid core wire works much better with the removable connections used when prototyping.
 
 ![Wire types](/images/wire-types.jpg)
 

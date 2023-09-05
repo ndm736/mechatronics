@@ -6,13 +6,13 @@ Mechatronics projects require a variety of hardware and software. Some things ar
 
 ## Where to buy things
 
-Adafruit
-Sparkfun
-Pololu
+*Adafruit
+*Sparkfun
+*Pololu
 
 ## Software
 
-Eagle
-Kicad
-onShape
-PrusaSlicer
+*Eagle
+*Kicad
+*onShape
+*PrusaSlicer
