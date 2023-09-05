@@ -21,19 +21,19 @@ Wire kits are available from electronics distributors, either pre stripped and b
 ## Wire strippers
 Wire comes in a specific gauge, with smaller numbers representing thicker wires that can supply more current without heating up. Typical prototyping wires are 22, 24, or 26 gauge. The wire stripping tool has alligator like teeth for removing insulation. Use the correct gauge tooth for your wire, which may take some trial and error to identify depending on the manufacturing tolerances of your tool. Too large a tooth gap and the insulation will not be cut all the wy, making it difficult to pull off. Too small a tooth gap and the insulation will be cut away, but the wire will also be nicked and is much more likely to break there, typically in such a way that requires tweezers to get out of whereever it was stuck. Identify the gauge of the tool that works best for your wire, the insulation should slide right off without too much pulling without nicking the wire.
 
-![Wire strippers](/images/wire-strippers.jpg)
+![Wire strippers](images/wire-strippers.jpg)
 
 ## Breadboading
 
 Wire must touch to conduct. The tool most commonly used in electronics prototyping to connect wires is a breadboard, a collection of spring like wires in a plastic housing, with holes organized for the most convinient connections.
 
-![Breadboard clip](/images/clips.png)
+![Breadboard clip](images/clips.png)
 
-![Breadboard internals](/images/breadboard-internals.png)
+![Breadboard internals](images/breadboard-internals.png)
 
 The breadboard has two sides, each with two columns of conductors, called rails. The rails are used to distribute power, like 3.3V and ground, up and down the length of the breadboard, since these are the most commonly needed connections. The center of the breadboard arranges the conductors in rows, with 5 holes and each side, broken in the middle.
 
-![Breadboard internal connections](/images/breadboard-connections.png)
+![Breadboard internal connections](images/breadboard-connections.png)
 
 The break in the middle of the breadboard is design to allow integrated circuits or breakout boards to span the gap and make connections on either side.
 
