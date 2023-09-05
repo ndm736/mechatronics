@@ -2,7 +2,7 @@
 
 The following circuit diagram turn on an LED when power is applied.
 
-Image of led circuit
+ ![LED circuit](/images/led-circuit.jpg)
 
 A light emitting diode (LED) will light up when above a minimum voltage is applied and several milliamps flow through. For most small, indicator type LEDs, the minimum voltage is about 1.7V and 5mA makes the LED nice and visible. More than 10mA and the LED will get hot and possible start to smoke. Current can flow through the LED in one way, in the direction of the arrow. If the LED is inserted backwards it will not light! This type of component is called polarized, since it only works one way. Most polarized components have a long leg and a short leg, where the longer leg is the more positive side, to indicate how to plug it in.
 
