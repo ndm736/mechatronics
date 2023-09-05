@@ -52,6 +52,16 @@ To exit REPL and run code.py, type CTRL-D. If the code ends, the Serial window w
 {{#include servo.py}}
 ```
 
+You can find all of the functions included with CIrcuit Python in REPL mode by typing import [tab key].
+
+```py
+{{#include neopixel_write.py}}
+```
+
+Most external components do not have code included with Circuit Python. They must be downloaded and copied to the CIRCUITPY/lib folder to work. There isn't enough space on the board for all of the libraries, only copy the libraries you need!
+
+The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that cooresponds to your version of Circuit Python and unzip the folder. Libraries are found in the /lib folder, sometimes as files with .mpy extensions or as entire folders.
+
 ```py
 {{#include neopixel.py}}
 ```
