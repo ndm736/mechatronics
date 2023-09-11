@@ -24,26 +24,36 @@ To exit REPL and run code.py, type CTRL-D. If the code ends, the Serial window w
 
 ## Try some code!
 
+### Hello World!
 ```py
 {{#include print_hello.py}}
 ```
 
+### Blink an LED
 ```py
 {{#include blink.py}}
 ```
+
+### Change LED brightness with PWM
+Pulse width modulation, or PWM, blinks a pin at a frequency so fast that your eye smooths out the blinking, and the duty cycle sets how bright the LED appears to be.
 
 ```py
 {{#include fade.py}}
 ```
 
+### Read a push button
 ```py
 {{#include read_button.py}}
 ```
+
+### Button Debounce
+The voltage from a button press can toggle very quickly with one button press. The "bounces" can be ignored by reading the button after detecting a press and making sure the button is still pressed a short time later.
 
 ```py
 {{#include debounce.py}}
 ```
 
+### Read an analog voltage
 ```py
 {{#include read_voltage.py}}
 ```
