@@ -54,28 +54,52 @@ The voltage from a button press can toggle very quickly with one button press. T
 ```
 
 ### Read an analog voltage
+The analog to digital converter, or ADC, converts 0-3.3V to digital values from 0-65535. 
+
 ```py
 {{#include read_voltage.py}}
 ```
+
+### Set the angle of an RC servo motor
+An RC servo motor is a position controlled device. The cable requires 4-6V on the red wire, ground on the brown wire, and a digital signal on the orange wire. The digital siganl is a pulse, 0.5 ms to command 0 degrees to 2.5 ms to command 180 degrees, every 20 ms. This can be acheived with PWM.
 
 ```py
 {{#include servo.py}}
 ```
 
-You can find all of the functions included with CIrcuit Python in REPL mode by typing import [tab key].
+### Set the color of an addressable RGB LED (neopixel or ws2812b)
+LEDs can be PWMed to change their brightness, and you can use combined red/green/blue LEDs in a single package to make any color, but each LED would require 3 PWM pins. You just don't have enough pins to control a lot of LEDs.
+How many is a lot? Maybe you want hundreds of LEDs. You can do this with "smart" LEDs like the ws2812b, also known as neopixels. Each LED color and brightness can be set individually with just one pin from the microcontroller.
+The following method is a very simple way to set the color of a neopixel. Later you'll see a method that uses an external library and allows for more high level control of the LED colors, but this method is included in the default version of Circuit Python. How can you find these included functions? In REPL mode, type import [tab key], all the available methods will be printed.
 
 ```py
 {{#include neopixel_write.py}}
 ```
 
-Most external components do not have code included with Circuit Python. They must be downloaded and copied to the CIRCUITPY/lib folder to work. There isn't enough space on the board for all of the libraries, only copy the libraries you need!
+## Code with external libraries
+Most components that you connect to your board with a circuit do not have code included with Circuit Python. The library must be downloaded and copied to the CIRCUITPY/lib folder to work. There isn't enough space on the board for all of the libraries, only copy the libraries you need!
 
-The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that cooresponds to your version of Circuit Python and unzip the folder. Libraries are found in the /lib folder, sometimes as files with .mpy extensions or as entire folders.
+The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that cooresponds to your version of Circuit Python and unzip the folder. Libraries are found in the /lib folder, sometimes as files with .mpy extensions or as entire folders. Example code is found in the /examples folder, the contents of these files can be copied into code.py. Remeber that the code that runs on your board is code.py, so you can't just copy an example .py file, it must be named code.py!
+
+### Advanced neopixel control
+
 
 ```py
 {{#include neopixel.py}}
 ```
 
+### Read an accelerometer
+An accelerometer reports the acceleration of the board along the X, Y and Z axes. Acceleration is measured in Gs. At rest with Z pointed up, X and Y will report 0 G and Z will report -1 G. Sometimes the data is an integer and you must convert to Gs knowing the sensitivity and resolution of the accelerometer.
+
 ```py
 {{#include mma8451.py}}
 ```
+
+### Play a sound
+
+### Read from a capacitive touch sensor
+
+### Read from an ultrasonic rangefinder
+
+### Read from a laser proximity, gesture and light sensor
+
