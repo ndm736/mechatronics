@@ -37,6 +37,10 @@ To exit REPL and run code.py, type CTRL-D. If the code ends, the Serial window w
 ### Change LED brightness with PWM
 Pulse width modulation, or PWM, blinks a pin at a frequency so fast that your eye smooths out the blinking, and the duty cycle sets how bright the LED appears to be.
 
+All GPIO pins can generate PWM, but there are only 16 PWM channels, so you cannot assign two independent PWM pins to the same channel. The channels are shown in the following table from the RP2040 datasheet:
+
+![PWM channels](images/pwm-mappings.png)
+
 ```py
 {{#include fade.py}}
 ```
