@@ -41,6 +41,8 @@ All GPIO pins can generate PWM, but there are only 16 PWM channels, so you canno
 
 ![PWM channels](images/pwm-mappings.png)
 
+For example, you can use PWM on GP13 and GP14, but not GP14 and GP15.
+
 ```py
 {{#include fade.py}}
 ```
