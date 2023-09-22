@@ -94,6 +94,10 @@ The libraries come as a zip folder from [Circuit Python](https://circuitpython.o
 {{#include neopixel.py}}
 ```
 
+```py
+{{#include neopixel_rainbow.py}}
+```
+
 ### Read an accelerometer
 An accelerometer reports the acceleration of the board along the X, Y and Z axes. Acceleration is measured in Gs. At rest with Z pointed up, X and Y will report 0 G and Z will report -1 G. Sometimes the data is an integer and you must convert to Gs knowing the sensitivity and resolution of the accelerometer.
 
@@ -104,6 +108,10 @@ An accelerometer reports the acceleration of the board along the X, Y and Z axes
 ### Play a sound
 
 ### Read from a capacitive touch sensor
+
+```py
+{{#include mpr121_cap_touch.py}}
+```
 
 ### Read from an ultrasonic rangefinder
 
