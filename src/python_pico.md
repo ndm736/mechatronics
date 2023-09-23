@@ -106,6 +106,15 @@ An accelerometer reports the acceleration of the board along the X, Y and Z axes
 ```
 
 ### Play a sound
+Play a tone by making a sine wave with a specific frequency.
+```py
+{{#include play_tone.py}}
+```
+
+Play a .wav file.
+```py
+{{#include play_wav.py}}
+```
 
 ### Read from a capacitive touch sensor
 
