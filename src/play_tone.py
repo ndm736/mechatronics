@@ -12,7 +12,7 @@ import audiobusio # library to use I2S to communicate with MAX98357 amplifier
 # SD is shutdown if put to GND
 # Gain: loudest with 100k to GND, loud straight to GND, regular no connection, 
 #       quieter straight to VIN, quietest 100k to VIN
-audio = audiobusio.I2SOut(board.GP0, board.GP1, board.GP2) # BCLK, LRC, DIN
+audio = audiobusio.I2SOut(board.GP0, board.GP1, board.GP2) # I2S pins BCLK, LRC, DIN
 
 tone_volume = 0.5  # digital volume, 0.0 to 1.0
 frequency = 440  # tone frequency

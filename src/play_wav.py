@@ -9,7 +9,7 @@ import time
 
 wave_file = open("StreetChicken.wav", "rb") # from https://cdn-learn.adafruit.com/assets/assets/000/057/801/original/StreetChicken.wav?
 wave = audiocore.WaveFile(wave_file)
-audio = audiobusio.I2SOut(board.GP0, board.GP1, board.GP2)
+audio = audiobusio.I2SOut(board.GP0, board.GP1, board.GP2) # MAX98357, I2S pins BCLK, LRC, DIN
 
 while True:
     print("wav file start")
