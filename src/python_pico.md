@@ -105,6 +105,10 @@ An accelerometer reports the acceleration of the board along the X, Y and Z axes
 {{#include mma8451.py}}
 ```
 
+```py
+{{#include mpu6050_imu.py}}
+```
+
 ### Play a sound
 Play a tone by making a sine wave with a specific frequency.
 ```py
@@ -122,7 +126,16 @@ Play a .wav file.
 {{#include mpr121_cap_touch.py}}
 ```
 
+### Read from a temperature and barometric sensor
+The BMP180/BMP280 sensor returns temperature and air pressure measurements. The BMP180 resolution is not as good as the BMP280, but is otherwise the same.
+
+```py
+{{#include bmp180_temperature_pressure.py}}
+```
+
 ### Read from an ultrasonic rangefinder
+
+
 
 ### Read from a laser proximity, gesture and light sensor
 
