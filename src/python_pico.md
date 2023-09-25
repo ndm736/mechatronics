@@ -85,14 +85,34 @@ The following method is a very simple way to set the color of a neopixel. Later 
 ## Code with external libraries
 Most components that you connect to your board with a circuit do not have code included with Circuit Python. The library must be downloaded and copied to the CIRCUITPY/lib folder to work. There isn't enough space on the board for all of the libraries, only copy the libraries you need!
 
-The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that cooresponds to your version of Circuit Python and unzip the folder. Libraries are found in the /lib folder, sometimes as files with .mpy extensions or as entire folders. Example code is found in the /examples folder, the contents of these files can be copied into code.py. Remeber that the code that runs on your board is code.py, so you can't just copy an example .py file, it must be named code.py!
+The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that corresponds to your version of Circuit Python and unzip the folder. Libraries are found in the library bundle /lib folder, sometimes as files with .mpy extensions or as entire folders. Copy the files needed into the CIRCUITPY/lib folder. Note the Pico W has only 2Mbyte of space, so copy only the files you need. Example code is found in the library bundle /examples folder, the contents of these files can be copied into code.py. Remeber that the code that runs on your board is code.py, so you can't just copy an example .py file, it must be named code.py!
 
 ### Advanced neopixel control
+Find the neopixel.mpy file in the library bundle and copy it to CIRCUITPY/lib. 
 
+The function
+
+```py
+pixels = neopixel.NeoPixel()
+```
+
+creates a structure that allows access the color of each LED in the Neopixel strip. For example, the first Neopixel is at index 0:
+
+```py
+pixels[0] = (255,0,0) # set the first LED full red
+```
+
+Nothing happens at that moment. All of the Neopixels update simultaneously when you call the show function
+
+```py
+pixels.show()
+```
 
 ```py
 {{#include neopixel.py}}
 ```
+
+The following code sets each Neopixel to the same brightness according to a color on the color wheel, so the input is a single number from 0 to 360 and the output is in RGB, starting at red. This is a useful function because the brightness is constant and it takes only one input.
 
 ```py
 {{#include neopixel_rainbow.py}}
@@ -105,37 +125,55 @@ An accelerometer reports the acceleration of the board along the X, Y and Z axes
 {{#include mma8451.py}}
 ```
 
+### Read an IMU
+An intertial measurement unit reports at least acceleration and angular velocity, and sometimes also magnetic field strength and barometric pressure. All of this raw data can be integrated to estimate position and orientation, although the algorithm can be tricky and the sensor needs to be low noise, low offset and low drift. 
+
 ```py
 {{#include mpu6050_imu.py}}
 ```
 
 ### Play a sound
-Play a tone by making a sine wave with a specific frequency.
+Humans can hear sounds from 20Hz to 20kHz. Sound is made by applying a varying signal to an amplifier to a speaker, sometimes as a voltage and sometimes digitally. The update rate effects the quality of the sound, and is required mathematically to be at least 2 times the highest frequency contained in the sample. But that means a lot of data needs to be stored and sent to the amplifier, so in microcontroller projects the quality is usually dropped in order to take up less space and computational time. 
+
+Here a digital amplifier is used, the MAX98357, using a digital protocol called I2S. Digital transmission is nice because it helps to reject analog noise. 
+
+The following code plays a tone by making a sine wave with a specific frequency in an array. This type of sound is sometimes refered to as 8bit sound, although the data is actually 16bit in this case, and might remind you of "early Nintendo level" of sounds.
 ```py
 {{#include play_tone.py}}
 ```
 
-Play a .wav file.
+You can also play a sound file, in .wav format. A .wav file has no compression, it is just a giant array of the signal recorded at a set frequency. Note the limited space on your microcontroller board, the Pico W has only 2Mbyte total, so you are limited in how long of a .wav file you can play. There are lots of sound editing softwares available to convert other file types into .wav, as well as downsample to lower frequencies to make the file smaller (try Audacity).
+
 ```py
 {{#include play_wav.py}}
 ```
 
 ### Read from a capacitive touch sensor
+Physical buttons have limitations in certain environments, and such as places that are dirty or wet. A "contactless" button can be made by reading the change in capacitance on a conductor when a user gets close to the surface. In this way the conductor can be placed behind a barrier and still detect presence. The downside to this technique is a lack of feedback in the form of a change in the force profile, like a detent, or an audible click, when the button is selected. The cool thing is that many nontraditional button materials can be used, as long as they a conductive (see bananna piano).
 
 ```py
 {{#include mpr121_cap_touch.py}}
 ```
 
 ### Read from a temperature and barometric sensor
-The BMP180/BMP280 sensor returns temperature and air pressure measurements. The BMP180 resolution is not as good as the BMP280, but is otherwise the same.
+The BMP180/BMP280 sensor returns temperature and air pressure measurements. The BMP180 resolution is not as good as the BMP280, but is otherwise the same. Barometric pressure can be used to estimate altitude or change in height, like going high up in a building.
 
 ```py
 {{#include bmp180_temperature_pressure.py}}
 ```
 
 ### Read from an ultrasonic rangefinder
+A classic way to estimate distance is to emit a pulse of sound and time how long it takes for an echo to return. The sound is usually at 40kHz or above, outside the range of human hearing. Sound travels at 343m/s, so the distance can be calculated as the time, divided by two, times the speed of sound.
 
+The HC-SR04 ultrasonic rangefinder is inexpensive, but works better with a 5V supply rather than the usual 3.3V, sometimes misses the echo or returns values with high amounts of noise, and has a wide view angle, so sometimes returns the distance of objects not exactly right in front of the sensor.
 
+```py
+{{#include hcsr04_rangefinder.py}}
+```
 
 ### Read from a laser proximity, gesture and light sensor
+A more modern rangefinder uses the light reflected from a laser emitter, either from the ammount reflected or coherence. These sensors often can report other values, like ambient light conditions or gestures from waving in front of the sensor.
 
+```py
+{{#include adps9930_proximity.py}}
+```
