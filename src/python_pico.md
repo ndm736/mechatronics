@@ -177,8 +177,7 @@ The HC-SR04 ultrasonic rangefinder is inexpensive, but works better with a 5V su
 
 ### Read from a laser proximity, gesture and light sensor
 A more modern rangefinder uses the light reflected from a laser emitter, either from the ammount reflected or coherence. These sensors often can report other values, like ambient light conditions or gestures from waving in front of the sensor.
-<img src="images/pico-gesture.jpg" alt="Pico Gesture" width="500">
-
+![Pico Gesture](images/pico-gesture.jpg)
 ```py
 {{#include adps9930_proximity.py}}
 ```
