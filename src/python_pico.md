@@ -181,3 +181,17 @@ A more modern rangefinder uses the light reflected from a laser emitter, either 
 ```py
 {{#include adps9930_proximity.py}}
 ```
+
+### Draw text to an I2C OLED monochrome display
+OLED displays have very high contrast, with an LED for each pixel. Displays take a lot of memory and work best with SPI communication, but a small monochrome display can work with I2C which makes the wiring more convinient. 
+![Pico SSD1306](images/pico-oled.jpg)
+```py
+{{#include draw_text_ssd1306.py}}
+```
+
+### Draw an eye on a round TFT LCD
+The GC9A01 is a driver for a 1.28 inch round TFT LCD display, controlled with SPI in 16bit color. The library is located in the Circuit Python Community Bundle, not the regular Library Bundle.
+![Pico GC9A01](images/pico-gc9a01.jpg)
+```py
+{{#include draw_eye_gc9a01.py}}
+```
