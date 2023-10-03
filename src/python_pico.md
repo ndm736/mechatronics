@@ -195,3 +195,10 @@ The GC9A01 is a driver for a 1.28 inch round TFT LCD display, controlled with SP
 ```py
 {{#include draw_eye_gc9a01.py}}
 ```
+
+### Read distance from an ultrasonic rangefinder
+The HC-SR04 ultrasonic rangefinder emitts several pings at frequencies above the range of human hearing (20kHz). The sensor listens for the echo of the sound. The time it takes for the sound to return can be converted to distance using the speed of sound in air. Here the library takes care of sending a pulse to the TRIG pin and timing how long the ECHO pin is high. Ocassionally the echo will not come back, so a try: exception: case is used to detect when there is no data.
+![Pico HCSR04](images/pico-hcsr04.jpg)
+```py
+{{#include read_ultrasonic_hcsr04.py}}
+```
