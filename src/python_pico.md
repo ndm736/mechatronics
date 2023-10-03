@@ -166,15 +166,6 @@ The BMP180/BMP280 sensor returns temperature and air pressure measurements. The 
 {{#include bmp180_temperature_pressure.py}}
 ```
 
-### Read from an ultrasonic rangefinder
-A classic way to estimate distance is to emit a pulse of sound and time how long it takes for an echo to return. The sound is usually at 40kHz or above, outside the range of human hearing. Sound travels at 343m/s, so the distance can be calculated as the time, divided by two, times the speed of sound.
-
-The HC-SR04 ultrasonic rangefinder is inexpensive, but works better with a 5V supply rather than the usual 3.3V, sometimes misses the echo or returns values with high amounts of noise, and has a wide view angle, so sometimes returns the distance of objects not exactly right in front of the sensor.
-
-```py
-{{#include hcsr04_rangefinder.py}}
-```
-
 ### Read from a laser proximity, gesture and light sensor
 A more modern rangefinder uses the light reflected from a laser emitter, either from the ammount reflected or coherence. These sensors often can report other values, like ambient light conditions or gestures from waving in front of the sensor.
 ![Pico Gesture](images/pico-gesture.jpg)
@@ -197,7 +188,11 @@ The GC9A01 is a driver for a 1.28 inch round TFT LCD display, controlled with SP
 ```
 
 ### Read distance from an ultrasonic rangefinder
-The HC-SR04 ultrasonic rangefinder emitts several pings at frequencies above the range of human hearing (20kHz). The sensor listens for the echo of the sound. The time it takes for the sound to return can be converted to distance using the speed of sound in air. Here the library takes care of sending a pulse to the TRIG pin and timing how long the ECHO pin is high. Ocassionally the echo will not come back, so a try: exception: case is used to detect when there is no data.
+A classic way to estimate distance is to emit a pulse of sound and time how long it takes for an echo to return. The sound is usually at 40kHz or above, outside the range of human hearing. Sound travels at 343m/s, so the distance can be calculated as the time, divided by two, times the speed of sound.
+
+The HC-SR04 ultrasonic rangefinder is inexpensive, but works better with a 5V supply rather than the usual 3.3V. It can miss the echo or returns values with high amounts of noise, and has a wide view angle, so sometimes returns the distance of objects not exactly right in front of the sensor.
+
+Here the library takes care of sending a pulse to the TRIG pin and timing how long the ECHO pin is high. Ocassionally the echo will not come back, so a try: exception: case is used to detect when there is no data.
 ![Pico HCSR04](images/pico-hcsr04.jpg)
 ```py
 {{#include read_ultrasonic_hcsr04.py}}
