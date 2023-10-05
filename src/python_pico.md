@@ -199,14 +199,20 @@ Here the library takes care of sending a pulse to the TRIG pin and timing how lo
 ```
 
 ### Connect the Pico W to wifi and see the IP address
-
+Your SSID and password can be kept outisde of code.py in the file settings.toml.
+Edit settings.toml with:
+```py
+CIRCUITPY_WIFI_SSID = "your-ssid-here"
+CIRCUITPY_WIFI_PASSWORD = "your-ssid-password-here"
+```
+This code will test to see if you can connect to the wifi network.
 ```py
 {{#include wifi_ip_address.py}}
 ```
 
 ### Generate a website using the Pico W
-Require adafruit_httpserver folder to be added to CIRCUITPY/lib.
-
+Requires adafruit_httpserver folder to be added to CIRCUITPY/lib.
+This example will print the IP address. Go to that address/client, and the temperature of the Pico will be printed, and a color selector tool will return a color to the Pico and the Pico will generate that color on a neopixel.
 ```py
 {{#include wifi_website.py}}
 ```
