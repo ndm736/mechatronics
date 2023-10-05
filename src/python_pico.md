@@ -197,3 +197,16 @@ Here the library takes care of sending a pulse to the TRIG pin and timing how lo
 ```py
 {{#include read_ultrasonic_hcsr04.py}}
 ```
+
+### Connect the Pico W to wifi and see the IP address
+
+```py
+{{#include wifi_ip_address.py}}
+```
+
+### Generate a website using the Pico W
+Require adafruit_httpserver folder to be added to CIRCUITPY/lib.
+
+```py
+{{#include wifi_website.py}}
+```
