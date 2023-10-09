@@ -14,4 +14,6 @@
 
 - [Programming the Pico in Circuit Python](./python_pico.md)
 
+- [Programming in Pygame Zero to interface to the Pico](./python_pygamezero.md)
+
 - [Chapter 1 (template example)](./chapter_1.md)
