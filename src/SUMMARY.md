@@ -16,4 +16,6 @@
 
 - [Programming in Pygame Zero to interface to the Pico](./python_pygamezero.md)
 
+- [Programming in Pygame Zero](./python_pgz.md)
+
 - [Chapter 1 (template example)](./chapter_1.md)
