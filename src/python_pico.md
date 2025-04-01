@@ -31,7 +31,7 @@ To exit REPL and run code.py, type CTRL-D. If the code ends, the Serial window w
 
 ### Blink an LED
 
-![Pico LED](images/pico-led.jpg)
+![Pico LED](images/pico-led.jpg =250x)
 ```py
 {{#include blink.py}}
 ```
@@ -41,7 +41,7 @@ Pulse width modulation, or PWM, blinks a pin at a frequency so fast that your ey
 
 All GPIO pins can generate PWM, but there are only 16 PWM channels, so you cannot assign two independent PWM pins to the same channel. The channels are shown in the following table from the RP2040 datasheet:
 
-![PWM channels](images/pwm-mappings.png)
+![PWM channels](images/pwm-mappings.png =250x)
 
 For example, you can use PWM on GP13 and GP14, but not GP14 and GP15.
 
@@ -50,7 +50,7 @@ For example, you can use PWM on GP13 and GP14, but not GP14 and GP15.
 ```
 
 ### Read a push button
-![Pico Button and LED](images/pico-button_led.jpg)
+![Pico Button and LED](images/pico-button_led.jpg =250x)
 ```py
 {{#include read_button.py}}
 ```
@@ -64,14 +64,14 @@ The voltage from a button press can toggle very quickly with one button press. T
 
 ### Read an analog voltage
 The analog to digital converter, or ADC, converts 0-3.3V to digital values from 0-65535. 
-![Pico Potentiometer](images/pico-potentiometer.jpg)
+![Pico Potentiometer](images/pico-potentiometer.jpg =250x)
 ```py
 {{#include read_voltage.py}}
 ```
 
 ### Set the angle of an RC servo motor
 An RC servo motor is a position controlled device. The cable requires 4-6V on the red wire, ground on the brown wire, and a digital signal on the orange wire. The digital siganl is a pulse, 0.5 ms to command 0 degrees to 2.5 ms to command 180 degrees, every 20 ms. This can be acheived with PWM.
-![Pico Servo](images/pico-servo.jpg)
+![Pico Servo](images/pico-servo.jpg =250x)
 ```py
 {{#include servo.py}}
 ```
@@ -80,7 +80,7 @@ An RC servo motor is a position controlled device. The cable requires 4-6V on th
 LEDs can be PWMed to change their brightness, and you can use combined red/green/blue LEDs in a single package to make any color, but each LED would require 3 PWM pins. You just don't have enough pins to control a lot of LEDs.
 How many is a lot? Maybe you want hundreds of LEDs. You can do this with "smart" LEDs like the ws2812b, also known as neopixels. Each LED color and brightness can be set individually with just one pin from the microcontroller.
 The following method is a very simple way to set the color of a neopixel. Later you'll see a method that uses an external library and allows for more high level control of the LED colors, but this method is included in the default version of Circuit Python. How can you find these included functions? In REPL mode, type import [tab key], all the available methods will be printed.
-![Pico single neopixel](images/pico-neopixel_single.jpg)
+![Pico single neopixel](images/pico-neopixel_single.jpg =250x)
 ```py
 {{#include neopixel_write.py}}
 ```
@@ -110,7 +110,7 @@ Nothing happens at that moment. All of the Neopixels update simultaneously when 
 ```py
 pixels.show()
 ```
-![Pico neopixel strip](images/pico-neopixel_strip.jpg)
+![Pico neopixel strip](images/pico-neopixel_strip.jpg =250x)
 ```py
 {{#include neopixel.py}}
 ```
@@ -130,7 +130,7 @@ An accelerometer reports the acceleration of the board along the X, Y and Z axes
 
 ### Read an IMU
 An intertial measurement unit reports at least acceleration and angular velocity, and sometimes also magnetic field strength and barometric pressure. All of this raw data can be integrated to estimate position and orientation, although the algorithm can be tricky and the sensor needs to be low noise, low offset and low drift. 
-![Pico IMU](images/pico-imu.jpg)
+![Pico IMU](images/pico-imu.jpg =250x)
 ```py
 {{#include mpu6050_imu.py}}
 ```
@@ -141,7 +141,7 @@ Humans can hear sounds from 20Hz to 20kHz. Sound is made by applying a varying s
 Here a digital amplifier is used, the MAX98357, using a digital protocol called I2S. Digital transmission is nice because it helps to reject analog noise. 
 
 The following code plays a tone by making a sine wave with a specific frequency in an array. This type of sound is sometimes refered to as 8bit sound, although the data is actually 16bit in this case, and might remind you of "early Nintendo level" of sounds.
-![Pico Speaker](images/pico-speaker.jpg)
+![Pico Speaker](images/pico-speaker.jpg =250x)
 ```py
 {{#include play_tone.py}}
 ```
@@ -154,35 +154,35 @@ You can also play a sound file, in .wav format. A .wav file has no compression, 
 
 ### Read from a capacitive touch sensor
 Physical buttons have limitations in certain environments, and such as places that are dirty or wet. A "contactless" button can be made by reading the change in capacitance on a conductor when a user gets close to the surface. In this way the conductor can be placed behind a barrier and still detect presence. The downside to this technique is a lack of feedback in the form of a change in the force profile, like a detent, or an audible click, when the button is selected. The cool thing is that many nontraditional button materials can be used, as long as they a conductive (see bananna piano).
-![Pico Cap Touch](images/pico-cap_touch.jpg)
+![Pico Cap Touch](images/pico-cap_touch.jpg =250x)
 ```py
 {{#include mpr121_cap_touch.py}}
 ```
 
 ### Read from a temperature and barometric sensor
 The BMP180/BMP280 sensor returns temperature and air pressure measurements. The BMP180 resolution is not as good as the BMP280, but is otherwise the same. Barometric pressure can be used to estimate altitude or change in height, like going high up in a building.
-![Pico Temperature and Pressure](images/pico-temperature_pressure.jpg)
+![Pico Temperature and Pressure](images/pico-temperature_pressure.jpg =250x)
 ```py
 {{#include bmp180_temperature_pressure.py}}
 ```
 
 ### Read from a laser proximity, gesture and light sensor
 A more modern rangefinder uses the light reflected from a laser emitter, either from the ammount reflected or coherence. These sensors often can report other values, like ambient light conditions or gestures from waving in front of the sensor.
-![Pico Gesture](images/pico-gesture.jpg)
+![Pico Gesture](images/pico-gesture.jpg =250x)
 ```py
 {{#include adps9930_proximity.py}}
 ```
 
 ### Draw text to an I2C OLED monochrome display
 OLED displays have very high contrast, with an LED for each pixel. Displays take a lot of memory and work best with SPI communication, but a small monochrome display can work with I2C which makes the wiring more convinient. 
-![Pico SSD1306](images/pico-oled.jpg)
+![Pico SSD1306](images/pico-oled.jpg =250x)
 ```py
 {{#include draw_text_ssd1306.py}}
 ```
 
 ### Draw an eye on a round TFT LCD
 The GC9A01 is a driver for a 1.28 inch round TFT LCD display, controlled with SPI in 16bit color. The library is located in the Circuit Python Community Bundle, not the regular Library Bundle.
-![Pico GC9A01](images/pico-gc9a01.jpg)
+![Pico GC9A01](images/pico-gc9a01.jpg =250x)
 ```py
 {{#include draw_eye_gc9a01.py}}
 ```
@@ -193,7 +193,7 @@ A classic way to estimate distance is to emit a pulse of sound and time how long
 The HC-SR04 ultrasonic rangefinder is inexpensive, but works better with a 5V supply rather than the usual 3.3V. It can miss the echo or returns values with high amounts of noise, and has a wide view angle, so sometimes returns the distance of objects not exactly right in front of the sensor.
 
 Here the library takes care of sending a pulse to the TRIG pin and timing how long the ECHO pin is high. Ocassionally the echo will not come back, so a try: exception: case is used to detect when there is no data.
-![Pico HCSR04](images/pico-hcsr04.jpg)
+![Pico HCSR04](images/pico-hcsr04.jpg =250x)
 ```py
 {{#include read_ultrasonic_hcsr04.py}}
 ```
