@@ -12,7 +12,7 @@ A resistor follows Ohm's Law, V = I * R. If would be difficult to make the exact
 
 Values are read with the gold band on the right, as [color1 color2 * 10 to the color3]. For example, brown black orange gold is 1 0 * 10^3, or 10k Ohms.
 
-Power for this circuit is provided by 3.3V. Current flows from more positive voltage (3.3V) to less positive voltage (0V, also called ground or GND). For this circuit, we will use a Raspberry Pi Pico to generate 3.3V. The Pico recieves 5V from the USB cable and converts it to 3.3V for us to use. The Pico, plugged into the breadboard, has several pins that are GND, and one pin that is 3.3V, called 3V3(OUT). The pins on the Pico are not labelled, so you'll need an image of the pinout for the Pico:
+Power for this circuit is provided by 3.3V. Current flows from more positive voltage (3.3V) to less positive voltage (0V, also called ground or GND). For this circuit, we will use a Raspberry Pi Pico to generate 3.3V. The Pico recieves 5V from the USB cable and converts it to 3.3V for us to use. The Pico, plugged into the breadboard, has several pins that are GND, and one pin that is 3.3V, called 3V3(OUT). The pins on the Pico are not labelled, so you'll need an image of the pinout for a Raspberry Pi Pico, like the Pico W (all the Pico pinouts are the same):
 
 ![Pico W Pinout](images/picow-pinout.svg)
 
