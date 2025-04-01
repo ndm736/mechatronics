@@ -2,7 +2,7 @@
 
 Mechatronics is an engineering discipline at the intersection of Mechanical Engineering, Electrical Engineering, Computer Science, and Control Theory.  
 
-<img src="https://github.com/ndm736/mechatronics/tree/main/src/images/mechatronics.svg" width="250">
+<img src="https://github.com/ndm736/mechatronics/tree/main/src/images/mechatronics.svg">
 
 Mechatronics engineers use mechanical and electrical specifications to select senors and actuators, and interface them using embedded controllers programmed with algorithms for their control.  
 
