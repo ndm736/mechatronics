@@ -1,14 +1,5 @@
 # Programming the Pico in Circuit Python
 
-Hello class
-hello class again
-
-hey everyone
-
-hi
-
-
-
 The Raspberry Pi Pico microcontroller breakout board is a powerful and inexpensive device that can be programmed in Circuit Python or in C. On this page, we will program it with Cicruit Python.
 
 When the Pico is plugged into a computer for the first time it will enumerate as a thumb drive called RPI-RP2 (Pico 1) or RP2350 (Pico 2). This is the default, blank configuration of the board. The board can be placed into this mode while holding the BOOT button while plugging the USB cable in. 
