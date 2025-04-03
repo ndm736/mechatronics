@@ -1,6 +1,9 @@
 # Programming the Pico in Circuit Python
 
 Hello class
+hello class again
+
+
 
 The Raspberry Pi Pico microcontroller breakout board is a powerful and inexpensive device that can be programmed in Circuit Python or in C. On this page, we will program it with Cicruit Python.
 
