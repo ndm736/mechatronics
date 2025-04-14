@@ -76,6 +76,12 @@ An RC servo motor is a position controlled device. The cable requires 4-6V on th
 {{#include servo.py}}
 ```
 
+### Play a sound file with PWM and an analog amp
+The Pico can play audio files saved in the .wav format, using PWM to create the analog sound signal. The signal go go straight to a small speaker for a quiet sound, or go to an audio amplifier like [this](https://www.amazon.com/HiLetgo-Amplifier-Dual-Channel-Amplifiers-Potentiometer/dp/B01DKAI51M/) to be quite loud. Sound files can be found online in free repositories like [here](https://www.wavsource.com/sfx/sfx.htm) or you can make your own with free audio software like [Audacity](https://www.audacityteam.org/). Note that the Pico board has limited memory, less than 1MB available, so the files must be small. You can use Audacity to downsample the file to a lower sample rate, but the audio quality might be compromised. The audio amplifier works best with a 5V supply, and a large capacitor from Power+ to Power- helps remove hiss. The speaker goes between the Out + and - pins, the G pin goes to ground, and the audio signal goes to the L or B (looks like a typo on the board, should be R) pins.
+```py
+{{#include pwm_sound.py}}
+```
+
 ### Set the color of an addressable RGB LED (neopixel or ws2812b)
 LEDs can be PWMed to change their brightness, and you can use combined red/green/blue LEDs in a single package to make any color, but each LED would require 3 PWM pins. You just don't have enough pins to control a lot of LEDs.
 How many is a lot? Maybe you want hundreds of LEDs. You can do this with "smart" LEDs like the ws2812b, also known as neopixels. Each LED color and brightness can be set individually with just one pin from the microcontroller.
@@ -135,7 +141,7 @@ An intertial measurement unit reports at least acceleration and angular velocity
 {{#include mpu6050_imu.py}}
 ```
 
-### Play a sound
+### Play a sound with a digital amp
 Humans can hear sounds from 20Hz to 20kHz. Sound is made by applying a varying signal to an amplifier to a speaker, sometimes as a voltage and sometimes digitally. The update rate effects the quality of the sound, and is required mathematically to be at least 2 times the highest frequency contained in the sample. But that means a lot of data needs to be stored and sent to the amplifier, so in microcontroller projects the quality is usually dropped in order to take up less space and computational time. 
 
 Here a digital amplifier is used, the MAX98357, using a digital protocol called I2S. Digital transmission is nice because it helps to reject analog noise. 
