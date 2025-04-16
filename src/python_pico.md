@@ -97,7 +97,7 @@ Most components that you connect to your board with a circuit do not have code i
 The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that corresponds to your version of Circuit Python and unzip the folder. Libraries are found in the library bundle /lib folder, sometimes as files with .mpy extensions or as entire folders. Copy the files needed into the CIRCUITPY/lib folder. Note the Pico W has only 2Mbyte of space, so copy only the files you need. Example code is found in the library bundle /examples folder, the contents of these files can be copied into code.py. Remeber that the code that runs on your board is code.py, so you can't just copy an example .py file, it must be named code.py!
 
 ### Advanced neopixel control
-Find the neopixel.mpy file in the library bundle and copy it to CIRCUITPY/lib. 
+Find the neopixel.mpy file in the library bundle lib folder (/lib/neopixel.p, one of the few files that does not start with adafruit_) and copy it to CIRCUITPY/lib. 
 
 The function
 
