@@ -8,19 +8,29 @@ To install Circuit Python, download a precompiled version from the [Circuit Pyth
 
 To edit the code, open code.py in a text editor, edit the file, and after clicking save, the new file will start to run. The board will also enumerate as a virtual serial port, and the port can be opened in a terminal emulation program to send and recieve data.
 
-After the code is saved, it will remain on the board forever. Unplug the USB and plug in a battery and the code will immediately begin running again! The code doesn't really end either, typically the code will loop forever, until power is removed.
+After the code is saved, it will remain on the board forever. Unplug the USB and plug in a battery and the code will immediately begin running again! The code doesn't really end either, typically the code will loop forever, until power is removed.  
 
-It can be annoying to use a general text editor and terminal emulator program, so instead you could use an IDE developed for Circuit Python called [Mu](https://codewith.mu/), pronounced "moo". Mu contains a text editor, a terminal emulator, and some other goodies like standard Python and pygame zero for graphics.
+You will need two programs to interact with the Pico - a text editor, and a terminal emulator program. Many text editors will work, I suggest [VSCode](https://code.visualstudio.com/). For a terminal emulator, if you are on Windows, download and install [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). If you are on Mac, you already have a program called Screen for this purpose.  
 
-After you open Mu, click the Mode button in the top right and switch to CircuitPython. Click the load button and open code.py in the CIRCUITPY drive. One downside to the design of the Circuit Python system si that the code that runs on the board must be named code.py. If there is no file called code.py then nothing will run, and putting another .py file in the drive will be ignored unless it is run as a function from code.py. Not a horrible problem, but annoying when you have a few different programs to try out and you must constantly rename them.
+Open VSCode, and go to File->Open Folder, and select CIRCUITPY. Then, on the right file tree, open code.py. This is the file that lives on the Pico, and saving it will run the code.  
+
+One downside to the design of the Circuit Python system is that the code that runs on the board must be named code.py. If there is no file called code.py then nothing will run, and putting another .py file in the drive will be ignored unless it is run as a function from code.py. Not a horrible problem, but annoying when you have a few different programs to try out and you must constantly rename them.
 
 ## REPL
 
-Before editing code.py we can interact with Circuit Python using Read-Evaluate-Print-Loop, or REPL mode. Press the Serial button and click inside the CircuitPython REPL window at the bottom of the screen. Type any key and the board will enter REPL mode and present three carrots, ">>>". This is your clue to interact directly with Python. 
+Before editing code.py we can interact with Circuit Python using Read-Evaluate-Print-Loop, or REPL mode. REPL mode uses your computer screen to display the data from the Pico, and your computer keyboard to send data to the Pico. 
 
-In REPL mode you can create variables, do math or loops, and test code snippets. You wouldn't want to work in REPL, it is too slow, saving code in a file is much more convinient, but REPL is useful for debugging.
+First, you need to find the name of your Pico's USB port. Then, open the port on the terminal emulator program.  
 
-To exit REPL and run code.py, type CTRL-D. If the code ends, the Serial window will prompt you to type any key to enter REPL or type CTRL-D to run the code again. Usually the code is in an infinite loop and will not end, so to cause the code to end and enter REPL at any time you can type CTRL-C. This is the best way to stop and restart the code.
+On Windows, open the program Device Manager, and scroll down to PORTS. The name of the Pico should be something like COM3. Open the program Putty, and select the Serial radio button. Enter the name of the port and click Open. 
+
+On Mac, open the program Terminal. To list the names of the USB devices available, type ```ls /dev/tty.*```. The Pico will be something like /dev/tty.usbmodem1234. Now, type ```screen /dev/tty.usbmodem1234```, and the screen will clear as the program Screen runs inside it. Later, to exit Screen, don't close the Terminal program, instead type ```control-a control-k``` followed by "y" (this is the appropriate way to close the Screen program). If you do close Terminal without closing Screen, you will need to unplug and replug the Pico to free the port.  
+
+In the terminal emulator, type any key and the board will enter REPL mode and present three carrots, ">>>". This is your clue that you can now interact directly with Python. 
+
+In REPL mode you can create variables, do math or loops, and test code snippets. You wouldn't want to work in REPL, it is too slow to add the code. Saving code in a file is much more convinient, but REPL is useful for debugging.
+
+To exit REPL and run code.py, type "control-d". If the code ends, the terminal emulator will prompt you to type any key to enter REPL or type "control-d" to run the code again. Usually the code is in an infinite loop and will not end, so to cause the code to end and enter REPL at any time you can type "control-c". This is the best way to stop and restart the code.
 
 ## Try some code!
 
@@ -70,31 +80,31 @@ The analog to digital converter, or ADC, converts 0-3.3V to digital values from 
 ```
 
 ### Set the angle of an RC servo motor
-An RC servo motor is a position controlled device. The cable requires 4-6V on the red wire, ground on the brown wire, and a digital signal on the orange wire. The digital siganl is a pulse, 0.5 ms to command 0 degrees to 2.5 ms to command 180 degrees, every 20 ms. This can be acheived with PWM.
+An RC servo motor is a position controlled device. The cable requires 4-6V on the red wire, ground on the brown wire, and a digital signal on the orange wire. The digital signal is a pulse, 0.5 ms to command 0 degrees to 2.5 ms to command 180 degrees, every 20 ms. This can be acheived with PWM.
 ![Pico Servo](images/pico-servo.jpg)
 ```py
 {{#include servo.py}}
 ```
 
 ### Play a sound file with PWM and an analog amp
-The Pico can play audio files saved in the .wav format, using PWM to create the analog sound signal. The signal go go straight to a small speaker for a quiet sound, or go to an audio amplifier like [this](https://www.amazon.com/HiLetgo-Amplifier-Dual-Channel-Amplifiers-Potentiometer/dp/B01DKAI51M/) to be quite loud. Sound files can be found online in free repositories like [here](https://www.wavsource.com/sfx/sfx.htm) or you can make your own with free audio software like [Audacity](https://www.audacityteam.org/). Note that the Pico board has limited memory, less than 1MB available, so the files must be small. You can use Audacity to downsample the file to a lower sample rate, but the audio quality might be compromised. The audio amplifier works best with a 5V supply, and a large capacitor from Power+ to Power- helps remove hiss. The speaker goes between the Out + and - pins, the G pin goes to ground, and the audio signal goes to the L or B (looks like a typo on the board, should be R) pins.
+The Pico can play audio files saved in the .wav format, using PWM to create the analog sound signal. The signal can go straight to a small speaker for a quiet sound, or go to an audio amplifier like [this](https://www.amazon.com/HiLetgo-Amplifier-Dual-Channel-Amplifiers-Potentiometer/dp/B01DKAI51M/) to be quite loud. Sound files can be found online in free repositories like [here](https://www.wavsource.com/sfx/sfx.htm) or you can make your own with free audio software like [Audacity](https://www.audacityteam.org/) or [REAPER](https://www.reaper.fm/). Note that the Pico board has limited memory, less than 1MB available, so the files must be small. You can use Audacity to downsample the file to a lower sample rate, but the audio quality might be compromised. The audio amplifier works best with a 5V supply, and a large capacitor from Power+ to Power- helps remove hiss. The speaker goes between the Out + and - pins, the G pin goes to ground, and the audio signal goes to the L or B (looks like a typo on the board, should be R) pins.
 ```py
 {{#include pwm_sound.py}}
 ```
 
-### Set the color of an addressable RGB LED (neopixel or ws2812b)
+### Set the color of an addressable RGB LED (Neopixel or ws2812b)
 LEDs can be PWMed to change their brightness, and you can use combined red/green/blue LEDs in a single package to make any color, but each LED would require 3 PWM pins. You just don't have enough pins to control a lot of LEDs.
-How many is a lot? Maybe you want hundreds of LEDs. You can do this with "smart" LEDs like the ws2812b, also known as neopixels. Each LED color and brightness can be set individually with just one pin from the microcontroller.
-The following method is a very simple way to set the color of a neopixel. Later you'll see a method that uses an external library and allows for more high level control of the LED colors, but this method is included in the default version of Circuit Python. How can you find these included functions? In REPL mode, type import [tab key], all the available methods will be printed.
+How many is a lot? Maybe you want hundreds of LEDs. You can do this with "smart" LEDs like the ws2812b, also known as Neopixels. Each LED color and brightness can be set individually with just one pin from the microcontroller.
+The following method is a very simple way to set the color of a single Neopixel. Further down on this page you'll see a method that uses an external library and allows for more high level control of many LED colors, but this simple method is included in the default version of Circuit Python. How can you find these included functions? In REPL mode, type "import [tab key]", and all the available methods will be printed.
 ![Pico single neopixel](images/pico-neopixel_single.jpg)
 ```py
 {{#include neopixel_write.py}}
 ```
 
 ## Code with external libraries
-Most components that you connect to your board with a circuit do not have code included with Circuit Python. The library must be downloaded and copied to the CIRCUITPY/lib folder to work. There isn't enough space on the board for all of the libraries, only copy the libraries you need!
+Most complicated components that you connect to your board with a circuit do not have code included with Circuit Python. The library must be downloaded and copied to the CIRCUITPY/lib folder to work. There isn't enough space on the board for all of the libraries, only copy the libraries you need!
 
-The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that corresponds to your version of Circuit Python and unzip the folder. Libraries are found in the library bundle /lib folder, sometimes as files with .mpy extensions or as entire folders. Copy the files needed into the CIRCUITPY/lib folder. Note the Pico W has only 2Mbyte of space, so copy only the files you need. Example code is found in the library bundle /examples folder, the contents of these files can be copied into code.py. Remeber that the code that runs on your board is code.py, so you can't just copy an example .py file, it must be named code.py!
+The libraries come as a zip folder from [Circuit Python](https://circuitpython.org/libraries). Download the folder that corresponds to your version of Circuit Python and unzip the folder. Libraries are found in the library bundle /lib folder, sometimes as files with .mpy extensions or as entire folders. Copy the files needed into the CIRCUITPY/lib folder. Note the Pico has limited space, so copy only the files you need. Example code is found in the library bundle /examples folder, the contents of these files can be copied into code.py. Remeber that the code that runs on your board is code.py, so you can't just copy an example .py file, it must be named code.py!
 
 ### Advanced neopixel control
 Find the neopixel.mpy file in the library bundle lib folder (/lib/neopixel.p, one of the few files that does not start with adafruit_) and copy it to CIRCUITPY/lib. 
@@ -144,7 +154,7 @@ An intertial measurement unit reports at least acceleration and angular velocity
 ### Play a sound with a digital amp
 Humans can hear sounds from 20Hz to 20kHz. Sound is made by applying a varying signal to an amplifier to a speaker, sometimes as a voltage and sometimes digitally. The update rate effects the quality of the sound, and is required mathematically to be at least 2 times the highest frequency contained in the sample. But that means a lot of data needs to be stored and sent to the amplifier, so in microcontroller projects the quality is usually dropped in order to take up less space and computational time. 
 
-Here a digital amplifier is used, the MAX98357, using a digital protocol called I2S. Digital transmission is nice because it helps to reject analog noise. 
+Here, a digital amplifier is used, the MAX98357, using a digital protocol called I2S. Digital transmission is nice because it helps to reject analog noise. 
 
 The following code plays a tone by making a sine wave with a specific frequency in an array. This type of sound is sometimes refered to as 8bit sound, although the data is actually 16bit in this case, and might remind you of "early Nintendo level" of sounds.
 ![Pico Speaker](images/pico-speaker.jpg)
@@ -152,14 +162,20 @@ The following code plays a tone by making a sine wave with a specific frequency 
 {{#include play_tone.py}}
 ```
 
-You can also play a sound file, in .wav format. A .wav file has no compression, it is just a giant array of the signal recorded at a set frequency. Note the limited space on your microcontroller board, the Pico W has only 2Mbyte total, so you are limited in how long of a .wav file you can play. There are lots of sound editing softwares available to convert other file types into .wav, as well as downsample to lower frequencies to make the file smaller (try Audacity).
+You can also play a sound file, in .wav format. A .wav file has no compression, it is just a giant array of the signal recorded at a set frequency. Note the limited space on your microcontroller board, so you are limited in how long of a .wav file you can play. There are lots of sound editing softwares available to convert other file types into .wav, as well as downsample to lower frequencies to make the file smaller (try Audacity).
 
 ```py
 {{#include play_wav.py}}
 ```
 
+### Play a sound with PWM
+
+If you have an analog amplifier, you can play sound out of a PWM pin. It may have more hissing noise than a digital amplifier.
+
+EAMPLE CODE HERE
+
 ### Read from a capacitive touch sensor
-Physical buttons have limitations in certain environments, and such as places that are dirty or wet. A "contactless" button can be made by reading the change in capacitance on a conductor when a user gets close to the surface. In this way the conductor can be placed behind a barrier and still detect presence. The downside to this technique is a lack of feedback in the form of a change in the force profile, like a detent, or an audible click, when the button is selected. The cool thing is that many nontraditional button materials can be used, as long as they a conductive (see bananna piano).
+Physical buttons have limitations in certain environments, such as places that are dirty or wet. A "contactless" button can be made by reading the change in capacitance on a conductor when a user gets close to the surface. In this way the conductor can be placed behind a barrier and still detect presence. The downside to this technique is a lack of feedback in the form of a change in the force profile, like a detent, or an audible click, when the button is selected. The cool thing is that many nontraditional button materials can be used, as long as they a conductive (see bananna piano).
 ![Pico Cap Touch](images/pico-cap_touch.jpg)
 ```py
 {{#include mpr121_cap_touch.py}}
@@ -194,11 +210,11 @@ The GC9A01 is a driver for a 1.28 inch round TFT LCD display, controlled with SP
 ```
 
 ### Read distance from an ultrasonic rangefinder
-A classic way to estimate distance is to emit a pulse of sound and time how long it takes for an echo to return. The sound is usually at 40kHz or above, outside the range of human hearing. Sound travels at 343m/s, so the distance can be calculated as the time, divided by two, times the speed of sound.
+A classic way to estimate distance is to emit a pulse of sound and measure how long it takes for an echo to return. The sound is usually at 40kHz or above, outside the range of human hearing. Sound travels at 343m/s, so the distance can be calculated as the time, divided by two, times the speed of sound.
 
 The HC-SR04 ultrasonic rangefinder is inexpensive, but works better with a 5V supply rather than the usual 3.3V. It can miss the echo or returns values with high amounts of noise, and has a wide view angle, so sometimes returns the distance of objects not exactly right in front of the sensor.
 
-Here the library takes care of sending a pulse to the TRIG pin and timing how long the ECHO pin is high. Ocassionally the echo will not come back, so a try: exception: case is used to detect when there is no data.
+Here the library takes care of sending a pulse to the TRIG pin and timing how long the ECHO pin is high. Ocassionally the echo will not come back, so a "try: exception:" case is used to detect when there is no data.
 ![Pico HCSR04](images/pico-hcsr04.jpg)
 ```py
 {{#include read_ultrasonic_hcsr04.py}}
@@ -218,7 +234,7 @@ This code will test to see if you can connect to the wifi network.
 
 ### Generate a website using the Pico W
 Requires adafruit_httpserver folder to be added to CIRCUITPY/lib.
-This example will print the IP address. Go to that address/client, and the temperature of the Pico will be printed, and a color selector tool will return a color to the Pico and the Pico will generate that color on a neopixel.
+This example will print the IP address. Go to that address/client, and the temperature of the Pico will be printed, and a color selector tool will return a color to the Pico and the Pico will generate that color on a Neopixel.
 ```py
 {{#include wifi_website.py}}
 ```

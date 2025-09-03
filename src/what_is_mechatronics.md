@@ -4,7 +4,7 @@ Mechatronics is an engineering discipline at the intersection of Mechanical Engi
 
 ![What is mechatronics](images/mechatronics.svg)
 
-Mechatronics engineers use mechanical and electrical specifications to select senors and actuators, and interface them using embedded controllers programmed with algorithms for their control.  
+Mechatronics engineers use mechanical and electrical specifications to select sensors and actuators, and interface them using embedded controllers programmed with algorithms for their control.  
 
 Many of today's "smart" devices are mechatronic. These can be found in consumer electronics, IoT, medical devices, manufacturing, automation, automotive, just about every industry you can think of!  
 

@@ -8,7 +8,7 @@ Nick Marchuk is the lab manager and can be reached by email at nick.marchuk@u.no
 Nick offers open office hours throughout the week (days and times vary by quarter). All questions are welcome, from homework, course projects, DTC projects, capstone projects, research, clubs, class selection, anything! 
 
 ## Tools
-The Mechatronics Design lab offers lab benches with oscilloscopes, triple output power supplies, function generators, multimeters, solid and stranded wire, hand tools, and soldering irons. Behind the whiteboards are cabinets stocking common resistors, capacitors, and integrated circuits. Four 3D printers are available for student use. 
+The Mechatronics Design lab offers lab benches with oscilloscopes, triple output power supplies, function generators, multimeters, solid and stranded wire, hand tools, and soldering irons. Behind the whiteboards are cabinets stocking common resistors, capacitors, and integrated circuits. 3D printers are available for student use. 
 
 ## Lab Access
-The Mechatronics Design Lab is available from 9am to 6pm without Wildcard access, except during reserved classtime. After hours and weekend access is available by Wildcard, approval can be found at Ford Segal Access.
+The Mechatronics Design Lab is available from 9am to 6pm without Wildcard access, except during reserved classtime. After hours and weekend access is available by Wildcard, approval can be found at [Ford Segal Access](https://design.northwestern.edu/info-by-audience/current-students/ford-building-access-requests.html).

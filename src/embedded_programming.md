@@ -1,6 +1,6 @@
 # Embedded Programming
 
-Many design problems can be solved with circuits. But as the solution becomes more complicated, changing functionality can require a large amount of circuit to take apart, redesign, and rebuild. I can be faster to add a programmable element to the design, and change the code very rapidly while prototyping. The component that does this is a microcontroller. A microcontroller is a computer system on a chip that is designed to run code with relatively small amounts of power. Modern microcontrollers can be infinitely reprogrammed, and come in a variety of sizes, speeds, and memory amounts.
+Many design problems can be solved with circuits. But as the solution becomes more complicated, changing functionality can require a large amount of circuit to take apart, redesign, and rebuild. It can be faster to add a programmable element to the design, and change the code very rapidly while prototyping. The component that does this is a microcontroller. A microcontroller is a computer system on a chip that is designed to run code with relatively small amounts of power. Modern microcontrollers can be infinitely reprogrammed, and come in a variety of sizes, speeds, and amount of memory.
 
 Most microcontrollers do not fit into a breadboard, they are too small with too many pins. Components like this can be purchased presoldered onto a PCB called a breakout board, that makes it easier to use a component with a breadboard. A lot of these designs are open source hardware and software, so they are inexpensive and have large communities for support.
 
@@ -22,7 +22,7 @@ Most boards that run Circuit Python could also be programmed in C with Arduino. 
 
 ## Raspberry Pi vs Arduino
 
-Another popular system is the Raspberry Pi single board computer system. The Raspberry Pi is a computer, with 10 times the speed and 1000 times the memory of a microcontroller. But the Raspberry Pi runs an operating system, so a dedicated program might not run better than the same program on a microcontroller. Raspberry Pi's are also more expensive, take more gear to use, and can be hard to source. My recommendation, if you need graphics on an HDMI monitor or need to play high quality sound, try a Raspberry Pi. Otherwise you can probably do just as well with a less expensive and easier to use Arduino or Micro Python board.
+Another popular system is the Raspberry Pi single board computer system. The Raspberry Pi is a computer, with ten times the speed and one thousand times the memory of a microcontroller. But the Raspberry Pi runs an operating system, so a dedicated program might not run better than the same program on a microcontroller. Raspberry Pi's are also more expensive, take more gear to use, and can be hard to source. My recommendation is, if you need graphics on an HDMI monitor or need to play high quality sound, try a Raspberry Pi. Otherwise you can probably do just as well with a less expensive and easier to use Arduino or micropython board.
 
 ## Courses to take
 
@@ -30,7 +30,5 @@ Northwestern offers several courses on using microcontrollers:
 
 - ME333: Introduction to Mechatronics
 - ME433: Advanced Mechatronics
-- ME224: Experimental Engineering / Python
 - DSGN297: Smart Electronics in Design
 - DSGN495: Designing Product Interations (DPI)
-- EE###
