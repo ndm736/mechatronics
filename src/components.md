@@ -4,6 +4,8 @@ Mechatronics projects require a variety of hardware and software. Some things ar
 
 # Resources
 
+Hi there
+
 ## Where to buy things
 
 * [Adafruit](https://www.adafruit.com/)
