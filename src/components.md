@@ -4,7 +4,7 @@ Mechatronics projects require a variety of hardware and software. Some things ar
 
 # Resources
 
-Hi there
+Put something here
 
 ## Where to buy things
 
